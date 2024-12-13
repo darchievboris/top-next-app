@@ -1,0 +1,11 @@
+{
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-clean-order"
+    ],
+    "rules": {
+      "selector-max-id": 0
+    }
+  }
+}
