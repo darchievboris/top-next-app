@@ -2,10 +2,11 @@
   --black:#3B434E;
   --white:white;
   --primary:#7653FC;
-  --secondary:#1DC37E;
-  --separator-second: #FC836D;
-  --separate:#EBEBEB;
-  --highlighting:#C8F8E4;
+  --primary-hover:#6344df;
+  --green:#1DC37E;
+  --red: #FC836D;
+  --gray-light:#EBEBEB;
+  --green-light:#C8F8E4;
   --background: #F5F6F8;
   --foreground: #F9F8FF;
   --font-family: "Noto Sans", sans-serif;  
