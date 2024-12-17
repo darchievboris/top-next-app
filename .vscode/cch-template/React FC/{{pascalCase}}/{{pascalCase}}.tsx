@@ -1,5 +1,5 @@
 import { JSX } from 'react';
-import { {{pascalCase}}Props } from './{{pascalCase}}.props.ts';
+import { {{pascalCase}}Props } from './{{pascalCase}}.props';
 import styles from './{{pascalCase}}.module.css'
 import cn from 'classnames';
 
