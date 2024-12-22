@@ -1,18 +1,19 @@
 import { Button, Htag, P, Rating, Tag } from '@/components';
+import { withLayout } from '@/Layout/Layout';
 import { JSX, useState } from 'react';
 
-export default function Home(): JSX.Element {
+function Home(): JSX.Element {
 	const [rating, setRating] = useState<number>(4)
 	return (
-		<div>
+		<>
 			<Htag tag='h1'>Заголовок 1 уровня</Htag>
-			<Button appearance='primary' className='1231' disabled arrow='down'>
+			<Button appearance='primary' className='' disabled arrow='down'>
 				Добавить
 			</Button>
 			<Button appearance='ghost' arrow='right'>
 				Заказать
 			</Button>
-			export * from './UI/Button/Button'
+			
 			<P size='large'>
 				Выше указаны программы Adobe InDesign, Adobe Illustrator, Corel Draw и
 				ими можно успешно пользоваться дома или в дороге. Современные ноутбуки
@@ -60,6 +61,7 @@ export default function Home(): JSX.Element {
 			</Tag>
 			<Rating rating={rating} isEditable setRating={setRating}/>
 
-		</div>
+		</>
 	);
 }
+export default withLayout(Home)
