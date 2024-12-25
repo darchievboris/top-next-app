@@ -2,7 +2,7 @@ import { JSX, useEffect, useState, KeyboardEvent } from 'react';
 import { RatingProps } from './Rating.props';
 import styles from './Rating.module.css';
 import cn from 'classnames';
-import StartIcon from './Star.svg';
+import StarIcon from './Star.svg';
 export const Rating = ({
 	isEditable = false,
 	rating,
@@ -36,7 +36,7 @@ export const Rating = ({
 					onMouseLeave={() => changeDisplay(rating)}
 					onClick={() => handleClick(i + 1)}
 				>
-					<StartIcon
+					<StarIcon
 						tabIndex={isEditable ? 0 : -1}
 						onKeyDown={(e: KeyboardEvent<SVGAElement>) => isEditable && handleSpace(i + 1, e)}
 					/>
