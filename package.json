@@ -15,6 +15,7 @@
 		"classnames": "^2.5.1",
 		"cross-env": "^7.0.3",
 		"date-fns": "^4.1.0",
+		"html-react-parser": "^5.2.2",
 		"next": "15.0.4",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0",
