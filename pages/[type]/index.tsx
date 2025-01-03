@@ -1,3 +1,4 @@
+import { Input, Textarea } from '@/components';
 import { firstLevelMenu } from '@/helpers/helpers';
 import { MenuItem } from '@/interfaces/menu.interface';
 import { withLayout } from '@/Layout/Layout';
@@ -6,15 +7,20 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import { ParsedUrlQuery } from 'querystring';
 import { JSX } from 'react';
 
-function Type({firstCategory}:TypeProps): JSX.Element {
-	return <>{firstCategory}</>;
+function Type({ firstCategory }: TypeProps): JSX.Element {
+	return (
+		<>
+			{firstCategory}
+			<Input placeholder="тест" />
+			<Textarea placeholder='text'></Textarea>
+		</>
+	);
 }
 export default withLayout(Type);
 
 export const getStaticPaths: GetStaticPaths = async () => {
-
 	return {
-		paths: firstLevelMenu.map(m=>'/'+m.route),
+		paths: firstLevelMenu.map(m => '/' + m.route),
 		fallback: true
 	};
 };
@@ -28,13 +34,13 @@ export const getStaticProps: GetStaticProps<TypeProps> = async ({
 	const { data: menu } = await axios.post<MenuItem[]>(
 		process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find',
 		{
-			firstCategory:firstCategoryItem.id
+			firstCategory: firstCategoryItem.id
 		}
 	);
 	return {
 		props: {
 			menu,
-			firstCategory:firstCategoryItem.id
+			firstCategory: firstCategoryItem.id
 		}
 	};
 };

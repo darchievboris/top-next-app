@@ -7,3 +7,6 @@ export * from './HhData/HhData';
 export * from './Rating/Rating';
 export * from './Advantages/Advantages';
 export * from './Sort/Sort';
+export * from './UI/Input/Input';
+export * from './UI/Textarea/Textarea';
+export * from './Search/Search';
