@@ -11,6 +11,7 @@ export interface ProductModule {
 	oldPrice: number;
 	characteristics: ProductCharacteristic[];
 	advantages?: string;
+	disadvantages?: string;
 	initialRating: number;
 	createdAt: string;
 	updatedAt: string;
