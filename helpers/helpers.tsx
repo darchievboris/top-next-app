@@ -18,3 +18,16 @@ export const priceRu = (price: number): string =>
 		currency: 'RUB',
 		maximumFractionDigits: 0
 	}).format(price);
+
+export const declOfNum = (number:number): string =>{
+	const titles = ["отзыв","отзыва","отзывов"]
+	const cases = [2,0,1,1,1,2]
+	let temp =0
+
+	if(number %100 >4 && number %100 <20) {temp = 2}
+	else {
+		temp = cases[(number % 10 < 5) ? number % 10 : 5]
+	}
+
+	return titles[temp]
+}
