@@ -12,3 +12,5 @@ export * from './UI/Textarea/Textarea';
 export * from './Search/Search';
 export * from './Product/Product';
 export * from './UI/Divider/Divider';
+export * from './Review/Review';
+
