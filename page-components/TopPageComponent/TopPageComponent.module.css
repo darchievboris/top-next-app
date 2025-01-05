@@ -2,16 +2,17 @@
 .title{
 	display: grid;
 	grid-template-columns: auto 1fr auto;
-	align-items: baseline;
-	justify-items: left;
 	gap: 20px;
+	place-items: baseline left;
+
+	margin-bottom: 30px;
 }
+
 .hhTitle{
 	display: grid;
 	grid-template-columns: auto 1fr;
-	align-items: baseline;
-	justify-items: left;
-	gap:20px
+	gap:20px;
+	place-items: baseline left
 }
 
 .seo h1 {
@@ -21,17 +22,25 @@
 }
 
 .seo h2 {
+	margin-top: 40px;
+	margin-bottom: 25px;
+
 	font-size: 22px;
 	font-weight: 500;
 	line-height: 30px;
-	margin-top: 40px;
-	margin-bottom: 25px;
 }
 
 .seo h3 {
+	margin-top: 5px;
+	margin-bottom: 5px;
+
 	font-size: 20px;
 	font-weight: 600;
 	line-height: 27px;
-	margin-top: 5px;
-	margin-bottom: 5px;
+}
+
+@media screen and (width <= 640px) {
+	.title {
+		grid-template-columns: auto 1fr;
+	}
 }
