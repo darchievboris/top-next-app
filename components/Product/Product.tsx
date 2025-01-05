@@ -2,10 +2,9 @@ import {JSX, useState} from 'react';
 import {ProductProps} from './Product.props';
 import styles from './Product.module.css'
 import cn from 'classnames';
-import {Button, Card, Divider, Rating, Review, Tag} from "@/components";
+import {Button, Card, Divider, Rating, Review, ReviewForm, Tag} from "@/components";
 import {declOfNum, priceRu} from "@/helpers/helpers";
 import Image from 'next/image';
-import {log} from "node:util";
 
 export const Product = ({product}: ProductProps): JSX.Element => {
     const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
@@ -77,6 +76,7 @@ export const Product = ({product}: ProductProps): JSX.Element => {
                         <Divider/>
                     </div>
                 ))}
+                <ReviewForm productId={product._id}/>
             </Card>
         </>
     )
