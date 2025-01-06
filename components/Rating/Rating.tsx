@@ -54,13 +54,13 @@ export const Rating = forwardRef(({
     }, [rating]);
 
     return (
-        <div {...props} ref={ref} className={cn(styles.ratingWripper, {
+        <div {...props} ref={ref} className={cn(styles.ratingWrapper, {
             [styles.error]: error
         })}>
             {arrayRating.map((r: JSX.Element, i: number) => (
                 <span key={i}>{r}</span>
             ))}
-            {error && <span className={styles.errorMasage}>{error.message}</span>}
+            {error && <span className={styles.errorMessage}>{error.message}</span>}
         </div>
     );
 });
