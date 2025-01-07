@@ -1,44 +1,44 @@
 .tag {
-	display: inline-block;
-	margin-right: 5px;
-	padding: 5px 10px;
-	border-radius: 20px;
+    display: inline-block;
+    margin-right: 5px;
+    padding: 5px 10px;
+    border-radius: 20px;
 }
 
 .s {
-	font-size: 12px;
-	line-height: 12px;
+    font-size: 12px;
+    line-height: 12px;
 }
 
 .m {
-	font-size: 14px;
-	line-height: 14px;
+    font-size: 14px;
+    line-height: 14px;
 }
 
-.ghost{
-	border:1px solid var(--gray-light)
+.ghost {
+    border: 1px solid var(--gray-light)
 }
 
-.red{
-	font-weight: bold;
-	color: var(--white);
-	background-color: #DE0000;
+.red {
+    font-weight: bold;
+    color: var(--white);
+    background-color: #DE0000;
 }
 
-.grey{
-	font-weight: bold;
-	color: var(--white);
-	background-color: #B3C0D9;
+.grey {
+    font-weight: bold;
+    color: var(--white);
+    background-color: #8a99b7;
 }
 
-.green{
-	font-weight: bold;
-	color: var(--green);
-	background-color: var(--green-light);
+.green {
+    font-weight: bold;
+    color: var(--green);
+    background-color: var(--green-light);
 }
 
-.primary{
-	font-weight: bold;
-	color: var(--primary);
-	border: 1px solid var(--primary);
+.primary {
+    font-weight: bold;
+    color: var(--primary);
+    border: 1px solid var(--primary);
 }
