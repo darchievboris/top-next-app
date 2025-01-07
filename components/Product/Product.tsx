@@ -10,6 +10,7 @@ import {motion} from "framer-motion";
 export const Product = motion(forwardRef(({product}: ProductProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
     const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
     const reviewRef = useRef<HTMLDivElement>(null);
+    
     const scrollToReview = () => {
         setIsReviewOpened(true);
         reviewRef.current?.scrollIntoView({
