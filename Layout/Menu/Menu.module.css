@@ -25,6 +25,7 @@
     margin: 15px 0 21px 10px;
     padding-left: 32px;
     border-left: 1px solid #dfdfdf;
+    outline-offset: -1px;
 }
 
 .secondLevel {
