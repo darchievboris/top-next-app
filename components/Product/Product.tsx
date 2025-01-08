@@ -83,7 +83,12 @@ export const Product = motion(forwardRef(({product}: ProductProps, ref: Forwarde
                             onClick={() => setIsReviewOpened(!isReviewOpened)}>Читать отзывы</Button>
                 </div>
             </Card>
-            <motion.div animate={isReviewOpened ? 'visible' : 'hidden'} variants={variants} initial="hidden">
+            <motion.div
+                animate={isReviewOpened ? 'visible' : 'hidden'}
+                variants={variants}
+                initial="hidden"
+                style={{pointerEvents: isReviewOpened ? 'auto' : 'none'}}
+            >
                 <Card ref={reviewRef} color="grey" className={styles.review}>
                     {product.reviews.map(r => (
                         <div key={r._id}>
