@@ -1,4 +1,4 @@
-import {ForwardedRef, forwardRef, JSX, useRef, useState} from 'react';
+import {ForwardedRef, forwardRef, JSX, KeyboardEvent, useRef, useState} from 'react';
 import {ProductProps} from './Product.props';
 import styles from './Product.module.css'
 import cn from 'classnames';
@@ -14,12 +14,19 @@ export const Product = motion(forwardRef(({product}: ProductProps, ref: Forwarde
         hidden: {opacity: 0, height: 0},
         visible: {opacity: 1, height: 'auto'},
     }
+    const scrollToReviewKey = (key: KeyboardEvent) => {
+        if (key.code == 'Space' || key.code == 'Enter') {
+            key.preventDefault();
+            scrollToReview()
+        }
+    }
     const scrollToReview = () => {
         setIsReviewOpened(true);
         reviewRef.current?.scrollIntoView({
             behavior: 'smooth',
             block: 'start'
         })
+        reviewRef.current?.focus()
     }
 
     return (
@@ -50,7 +57,7 @@ export const Product = motion(forwardRef(({product}: ProductProps, ref: Forwarde
                 <div className={styles.priceTitle}>цена</div>
                 <div className={styles.creditTitle}>кредит</div>
                 <div className={styles.rateTitle}>
-                    <a href="#ref" onClick={scrollToReview}>
+                    <a href="#ref" onClick={scrollToReview} onKeyDown={scrollToReviewKey}>
                         {product.reviewCount} {declOfNum(product.reviewCount)}
                     </a>
                 </div>
@@ -89,14 +96,14 @@ export const Product = motion(forwardRef(({product}: ProductProps, ref: Forwarde
                 initial="hidden"
                 style={{pointerEvents: isReviewOpened ? 'auto' : 'none'}}
             >
-                <Card ref={reviewRef} color="grey" className={styles.review}>
+                <Card ref={reviewRef} color="grey" className={styles.review} tabIndex={isReviewOpened ? 0 : -1}>
                     {product.reviews.map(r => (
                         <div key={r._id}>
                             <Review review={r}/>
                             <Divider/>
                         </div>
                     ))}
-                    <ReviewForm productId={product._id}/>
+                    <ReviewForm productId={product._id} isOpened={isReviewOpened}/>
                 </Card>
             </motion.div>
         </>
