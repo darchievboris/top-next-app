@@ -33,7 +33,6 @@ export const Product = motion(forwardRef(({product}: ProductProps, ref: Forwarde
         <>
             <Card className={styles.product} ref={ref}>
                 <div className={styles.logo}>
-
                     <Image
                         src={product.image}
                         alt={product.title}
@@ -41,21 +40,35 @@ export const Product = motion(forwardRef(({product}: ProductProps, ref: Forwarde
                         height={70}
                     />
                 </div>
+
                 <div className={styles.title}>{product.title}</div>
+
                 <div className={styles.price}>
-                    {priceRu(product.price)}
-                    {product.oldPrice &&
-                        <Tag className={styles.oldPrice}
-                             color="green">{priceRu(product.price - product.oldPrice)}</Tag>}
+                    <span><span className={styles.visuallyHidden}>цена</span>{priceRu(product.price)}</span>
+                    {product.oldPrice && <Tag
+                        className={styles.oldPrice}
+                        color="green">
+                        <span className={styles.visuallyHidden}>скидка</span>
+                        {priceRu(product.price - product.oldPrice)}
+                    </Tag>}
                 </div>
+
                 <div className={styles.credit}>
+                    <span className={styles.visuallyHidden}>кредит</span>
                     {priceRu(product.credit)}/<span className={styles.month}>мес</span>
                 </div>
-                <div className={styles.rating}><Rating rating={product.reviewAvg ?? product.initialRating}/></div>
+
+                <div className={styles.rating}>
+                    <span className={styles.visuallyHidden}>
+                        {'рейтинг ' + (product.reviewAvg ?? product.initialRating)}
+                    </span>
+                    <Rating rating={product.reviewAvg ?? product.initialRating}/>
+                </div>
+
                 <div className={styles.tags}>{product.categories.map(c => <Tag key={c} className={styles.category}
                                                                                color='ghost'>{c}</Tag>)}</div>
-                <div className={styles.priceTitle}>цена</div>
-                <div className={styles.creditTitle}>кредит</div>
+                <div className={styles.priceTitle} aria-hidden={true}>цена</div>
+                <div className={styles.creditTitle} aria-hidden={true}>кредит</div>
                 <div className={styles.rateTitle}>
                     <a href="#ref" onClick={scrollToReview} onKeyDown={scrollToReviewKey}>
                         {product.reviewCount} {declOfNum(product.reviewCount)}
