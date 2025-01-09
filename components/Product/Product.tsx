@@ -99,8 +99,12 @@ export const Product = motion(forwardRef(({product}: ProductProps, ref: Forwarde
                 <div className={styles.actions}>
                     <Button appearance='primary'>Узнать подробнее</Button>
                     <Button appearance='ghost'
-                            arrow={isReviewOpened ? 'down' : 'right'} className={styles.reviewButton}
-                            onClick={() => setIsReviewOpened(!isReviewOpened)}>Читать отзывы</Button>
+                            arrow={isReviewOpened ? 'down' : 'right'}
+                            className={styles.reviewButton}
+                            onClick={() => setIsReviewOpened(!isReviewOpened)}
+                            aria-expanded={isReviewOpened}>
+                        Читать отзывы
+                    </Button>
                 </div>
             </Card>
             <motion.div

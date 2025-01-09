@@ -50,10 +50,12 @@
 }
 
 .close {
-    cursor: pointer;
     position: absolute;
     top: 20px;
     right: 20px;
+
+    background: none;
+    border: none;
 }
 
 @media screen and (width <= 1100px) {
