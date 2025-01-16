@@ -1,7 +1,6 @@
 import { JSX } from 'react';
 import { HhDataProps } from './HhData.props';
 import styles from './HhData.module.css';
-
 import RateIcon from './rate.svg';
 import { priceRu } from '@/helpers/helpers';
 import { Card } from '..';

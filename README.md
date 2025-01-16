@@ -1,40 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Top-App
 
-## Getting Started
+**Top-App** — это учебный проект, созданный для рекламы видео-курсов. Он предоставляет удобный интерфейс для
+пользователей,
+где можно выбрать интересующую категорию курсов, ознакомиться с предложениями, оставить отзывы и оценить курсы.
 
-First, run the development server:
+## Основные функции
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Выбор категории курсов через меню.
+- Просмотр списка доступных видео-курсов.
+- Возможность оставлять отзывы о курсах.
+- Функция оценки курсов.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Используемые технологии
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Проект разработан с использованием следующих технологий:
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- **Next.js 15** — для серверного рендеринга и маршрутизации.
+- **React 19** — для построения интерфейса.
+- **JavaScript** — основной язык разработки.
+- **HTML и CSS** — для разметки и стилизации.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Особенности
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Полная адаптивность**
+   Сайт оптимизирован для различных экранов с использованием **CSS Grid**, что обеспечивает комфортный просмотр на
+   устройствах любых размеров.
 
-## Learn More
+2. **Доступность**
+    - Цветовая схема и контрастность полностью соответствуют рекомендациям Lighthouse.
+    - Реализованы корректные оповещения для скринридеров.
+    - Удобная навигация с клавиатуры и сниженная анимация для пользователей с повышенной чувствительностью к движению.
 
-To learn more about Next.js, take a look at the following resources:
+## Используемые библиотеки
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+- **Axios** — для работы с HTTP-запросами.
+- **Classnames** — упрощает управление CSS-классами.
+- **Cross-env** — для установки переменных окружения.
+- **Date-fns** — для работы с датами.
+- **Framer Motion** — для создания анимаций.
+- **Html-react-parser** — для парсинга HTML в React-компонентах.
+- **React-hook-form** — для работы с формами и валидацией.
+- **React-yandex-metrika** — интеграция с Яндекс.Метрикой.
+- **Stylelint-order** — для упорядочивания CSS-свойств.
+- **ESLint** — статический анализатор кода.
+- **Stylelint** — инструмент для проверки стиля CSS.
+- **TypeScript** — статическая типизация.
+- **Husky** — для автоматизации задач перед коммитами.
+- **Stylelint-webpack-plugin** — интеграция Stylelint с Webpack.
+- **PostCSS** — для обработки CSS.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Установка и запуск проекта
 
-## Deploy on Vercel
+1. Клонируйте репозиторий:
+   ```bash
+   git clone https://github.com/darchievboris/top-app.git
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Перейдите в директорию проекта:
+   ```bash
+   cd top-app
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+3. Установите зависимости:
+   ```bash
+   npm install
+   ```
+
+4. Запустите проект:
+   ```bash
+   npm run dev
+   ```
+
+5. Откройте в браузере:
+   ```
+   http://localhost:3000
+   ```
+
+## Lighthouse
+
+Проект соответствует высоким стандартам Lighthouse по доступности, производительности и SEO. Основное внимание уделено:
+
+- Контрастности текста.
+- Семантической разметке.
+- Поддержке скринридеров.

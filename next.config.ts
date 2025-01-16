@@ -1,4 +1,4 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
 	reactStrictMode: true,
@@ -7,29 +7,29 @@ const nextConfig: NextConfig = {
 			rules: {
 				'*.svg': {
 					loaders: ['@svgr/webpack'],
-					as: '*.js'
-				}
-			}
-		}
+					as: '*.js',
+				},
+			},
+		},
 	},
 	images: {
-		formats: ["image/avif", "image/webp"],
+		formats: ['image/avif', 'image/webp'],
 		remotePatterns: [
 			{
 				protocol: 'https',
 				hostname: 'old-images.hb.ru-msk.vkcs.cloud',
-				port: "",
-				pathname: "/uploads/**",
+				port: '',
+				pathname: '/uploads/**',
 			},
 		],
 	},
 	webpack(config) {
 		config.module.rules.push({
 			test: /\.svg$/,
-			use: ['@svgr/webpack']
+			use: ['@svgr/webpack'],
 		});
 		return config;
-	}
+	},
 	// webpack(config) {
 	// 	config.module.rules.push({
 	// 		test: /\.svg$/,
